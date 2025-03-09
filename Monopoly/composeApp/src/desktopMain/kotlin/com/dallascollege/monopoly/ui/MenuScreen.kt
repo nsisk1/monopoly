@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.sp
 fun MenuScreen(onPlayClicked: () -> Unit) {
     var showRules by remember { mutableStateOf(false) }
 
-    val background: Painter = painterResource("images/MonopolyBG.png")
-    val titleImage: Painter = painterResource("images/TitleText.png")
+    @Suppress("DEPRECATION") val background: Painter = painterResource("images/MonopolyBG.png")
+    @Suppress("DEPRECATION") val titleImage: Painter = painterResource("images/TitleText.png")
 
     Box(
         modifier = Modifier.fillMaxSize()

@@ -81,6 +81,7 @@ fun TokenSelectionScreen(players: List<Player>, onTokenSelected: (Player, String
                     }
                     Spacer(modifier = Modifier.width(24.dp))
 
+                    @Suppress("DEPRECATION")
                     Image(
                         painter = painterResource("images/${availableTokens[currentTokenIndex]}.png"),
                         contentDescription = "Token Image",

@@ -25,7 +25,7 @@ fun TurnOrderScreen(playerTokens: List<String>, onNextClicked: (List<String>) ->
         return newOrder
     }
 
-    val background: Painter = painterResource("images/MonopolyBG.png")
+    @Suppress("DEPRECATION") val background: Painter = painterResource("images/MonopolyBG.png")
 
     Box(
         modifier = Modifier.fillMaxSize()

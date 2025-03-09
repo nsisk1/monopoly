@@ -17,7 +17,7 @@ fun PlayerSelectionScreen(onPlayerSelected: (Int) -> Unit) {
     var selectedPlayers by remember { mutableStateOf<Int?>(null) }
 
 
-    val background: Painter = painterResource("images/MonopolyBG.png")
+    @Suppress("DEPRECATION") val background: Painter = painterResource("images/MonopolyBG.png")
 
     Box(
         modifier = Modifier.fillMaxSize()

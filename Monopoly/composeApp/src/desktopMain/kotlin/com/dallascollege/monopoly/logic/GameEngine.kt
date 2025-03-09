@@ -5,14 +5,15 @@ import com.dallascollege.monopoly.model.*
 class GameEngine {
     private val board = Board()
     private val players = listOf(
-        Player("Battleship"),
-        Player("Top hat")
+        Player(name = ""),
+        Player(name = "")
     )
     private var currentPlayerIndex = 0
 
     fun rollDice(): Int {
         return (1..6).random() + (1..6).random()
     }
+    class MonopolyGame()
 
     fun nextTurn() {
         val player = players[currentPlayerIndex]
