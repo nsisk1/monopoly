@@ -24,6 +24,7 @@ fun App() {
     val selectedTokens = remember { mutableStateMapOf<Player, String>() }
     var turnOrderConfirmed by remember { mutableStateOf(false) }
     var turnOrder by remember { mutableStateOf<List<String>>(emptyList()) }
+    var currentPlayerIndex by remember { mutableStateOf(0) } // Track the current player
 
     when {
         showMenu -> {
@@ -54,7 +55,7 @@ fun App() {
             )
         }
         else -> {
-            val currentPlayer = turnOrder.firstOrNull() ?: "Player"
+            val currentPlayer = turnOrder[currentPlayerIndex]
 
             Column(
                 modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -62,8 +63,11 @@ fun App() {
             ) {
                 Text("$currentPlayer, roll the dice!", style = MaterialTheme.typography.h5)
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = { /* dice roll */ }) {
-                    DiceRoller()
+                Button(onClick = {
+                    // Simulate dice roll and move to the next player
+                    currentPlayerIndex = (currentPlayerIndex + 1) % turnOrder.size
+                }) {
+                    Text("Roll Dice")
                 }
             }
         }
